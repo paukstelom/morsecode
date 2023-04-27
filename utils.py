@@ -17,10 +17,12 @@ logo = '''
 
 
 def clear_console():
+    """Clears console screen"""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def ask_to_continue(output_text):
+def ask_to_continue(output_text: str) -> bool:
+    """ Takes Y or N string input and returns bool value """
     print(output_text)
     while True:
         user_input = input()

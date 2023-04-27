@@ -1,14 +1,14 @@
-from utils import morse_code_dict, logo, ask_to_continue
+from utils import logo, ask_to_continue
+from engine import converter
+from tkinter_gui import Display
 
 print(logo)
-running = ask_to_continue('Begin? (Y/N): ')
+running = ask_to_continue(output_text='Begin? (Y/N): ')
 while running:
     text_input = input('Enter text to convert to morse code:\n').upper().strip()
+    result = converter(text_input=text_input)
+    print(f'Morse code:\n{result}')
+    if ask_to_continue(output_text='Display the morse code? (Y/N): '):
+        display = Display(morse_code=result)
+    running = ask_to_continue(output_text='\nConvert again? (Y/N): ')
 
-    morse_code_output = ''
-    for char in text_input:
-        if char in morse_code_dict.keys():
-            morse_code_output += morse_code_dict[char]
-    print(f'Morse code:')
-    print(morse_code_output.rstrip())
-    running = ask_to_continue('\nConvert again? (Y/N): ')
