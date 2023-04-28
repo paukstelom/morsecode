@@ -26,7 +26,7 @@ logo = '''
 os.environ['TERM'] = 'xterm'
 
 
-def clear_console():
+def clear_console() -> None:
     """Clears console screen"""
     os.system('cls' if os.name == 'nt' else 'clear')
 
