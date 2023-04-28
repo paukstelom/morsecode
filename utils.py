@@ -42,7 +42,7 @@ def ask_to_continue(output_text: str) -> bool:
         elif user_input.capitalize() == 'N':
             clear_console()
             return False
-        print('Invalid input')
+        print('> Invalid input')
 
 
 morse_code_dict = {

@@ -23,6 +23,7 @@ class Display:
     def flash_code(self):
         for char in self.morse_code:
             time.sleep(UNIT)
+            print(char)
             if char == '*':
                 self.beep(length='short')
             elif char == '---':
