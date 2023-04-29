@@ -32,6 +32,7 @@ class Display:
                 time.sleep(7 * UNIT)
             elif char == '3 Units':
                 time.sleep(3 * UNIT)
+        self.window.destroy()
 
     def beep(self, length: str):
         self.turn_on()
